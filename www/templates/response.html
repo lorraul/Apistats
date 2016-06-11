@@ -1,0 +1,14 @@
+<ion-view view-title="Response">
+    <!--<ion-nav-buttons side="secondary">
+      <button class="button ion-refresh" ng-click="refresh()">
+      </button>-->
+    </ion-nav-buttons>
+    <ion-content padding="true">
+        <p>Wallet Data: {{walletData.label}}</p>
+        <p>
+            <span ng-if="walletData.status == 'error'" class="badge badge-assertive">Error</span>
+            <span ng-if="walletData.status == 'resolved'" class="badge badge-balanced">Resolved</span>
+        </p>
+        <p>{{walletData.response}}</p>
+    </ion-content>
+</ion-view>

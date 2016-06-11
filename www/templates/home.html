@@ -1,0 +1,21 @@
+<ion-view view-title="Crypto Api Test">
+    <!--<ion-nav-buttons side="secondary">
+      <button class="button ion-refresh" ng-click="refresh()"></button>
+    </ion-nav-buttons>-->
+    <ion-content padding="true">
+        <ion-list>
+            <ion-item ng-repeat="wallet in wallets" href="#/response/{{wallet.address}}">
+                <span ng-if="wallet.status == 'error'" class="badge badge-assertive">Error</span>
+                <span ng-if="wallet.status == 'resolved'" class="badge badge-balanced">Reslv</span>
+                <p>Wallet data - {{wallet.label.toUpperCase()}}</p>
+                <p>{{wallet.response}}</p>
+            </ion-item>
+            <ion-item href="#/response/price">
+                <span ng-if="priceStatus == 'error'" class="badge badge-assertive">Error</span>
+                <span ng-if="priceStatus == 'resolved'" class="badge badge-balanced">Reslv</span>
+                <p>RDD coinmarketcap</p>
+                <p>{{price}}</p>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>
